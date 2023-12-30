@@ -1,3 +1,122 @@
-\begin{align*}
-    A = \sum^i_{i=0} BX_i + \sum^i+1_{i=0} CX_i
-\end{align*}
+\chapter*{Basic Set Theory}
+\section*{Exercise 0.3.6}
+  \begin{enumerate}
+    \item Prove $A \cap (B \cup C) = (A \cap B) \cup (A \cap C)$
+    \begin{enumerate}
+      \item Prove $A \cap (B \cup C) \subset (A \cap B) \cup (A \cap C)$
+      \begin{align*}
+        \nonumber
+        &\text{If}\ \ x \in A \cap (B \cup C) \implies x \in A \ \ \text{and}\ \ 
+        (x \in B \ \ \text{or} \ \ x \in C) \\
+        \nonumber
+        &\implies (x \in A \ \ \text{and} \ \ x \in B) \ \ \text{or} \ \ 
+        (x \in A \ \ \text{and} \ \ x \in C) \\
+        \nonumber
+        &\therefore \ \ A \cap (B \cup C) \subset (A \cap B) \cup (A \cap C)
+      \end{align*}
+      \item Prove $(A \cap B) \cup (A \cap C) \subset A \cap (B \cup C)$
+      \begin{align*}
+        \nonumber
+        &\text{If}\ \ x \in (A \cap B) \cup (A \cap C) \implies
+        (x \in A \ \ \text{and} \ \ x \in B)\ \ \text{or} \ \ 
+        (x \in A \ \ \text{and} \ \ x \in C) \\
+        \nonumber
+        &\implies x \in A \ \ \text{or} \ \ 
+        (x \in B \ \ \text{and} \ \ x \in C) \\
+        \nonumber
+        &\therefore \ \ (A \cap B) \cup (A \cap C) \subset A \cap (B \cup C)
+      \end{align*}
+      \item Thus $A \cap (B \cup C) = (A \cap B) \cup (A \cap C)$ \qedsymbol{}
+    \end{enumerate}
+    \item Prove $A \cup (B \cap C) = (A \cup B) \cap (A \cup C)$ \\
+    \begin{enumerate}
+      \item Prove $A \cup (B \cap C) \subset (A \cup B) \cap (A \cup C)$
+      \begin{align*}
+        &\text{If}\ \ x \in A \cup (B \cap C) \implies x \in A \ \ \text{or} \ \ 
+        (x \in B \ \ \text{and} \ \ x \in C) \\
+        &\implies (x \in A \ \ \text{or} \ \ x \in B) \ \ \text{and} \ \ 
+        (x \in A \ \ \text{or} \ \ x \in C) \\
+        &\therefore \ \ A \cup (B \cap C) \subset (A \cup B) \cap (A \cup C)
+      \end{align*}
+      \item Prove $(A \cup B) \cap (A \cup C) \subset A \cup (B \cap C)$
+      \begin{align*}
+        &\text{If}\ \ x \in (A \cup B) \cap (A \cup C) \implies
+        (x \in A \ \ \text{or} \ \ x \in B) \ \ \text{and} \ \
+        (x \in A \ \ \text{or} \ \ x \in C) \\
+        &\implies x \in A \ \ \text{or} \ \ (x \in B \ \ \text{and} \ \ x \in C) \\
+        &\therefore \ \ (A \cup B) \cap (A \cup C) \subset A \cup (B \cap C)
+      \end{align*}
+      \item Thus $A \cup (B \cap C) = (A \cup B) \cap (A \cup C)$ \qedsymbol{}
+    \end{enumerate}
+  \end{enumerate}
+\section*{Exercise 0.3.11}
+  Prove by induction that $n < 2^n$ for all $n \in \mathbb{N}$.
+  \begin{enumerate}
+    \item Step 1: $n = 1$
+    \begin{align*}
+      1 < 2^1 \\
+      1 < 2 \\
+    \end{align*}
+    \item Step 2: Assume $k < 2^k$. Prove that $n < 2^n$ holds for $n=k+1$
+    \begin{align*}
+      k+1 &< 2^{k+1} \\
+      k &< 2^k \cdot 2^1 - 1
+    \end{align*}
+    \item If $k < 2^k$ then $2 \cdot 2^k - 1 > k$ \qedsymbol{}
+  \end{enumerate}
+\section*{Exercise 0.3.12}
+  Show that for a finite set $A$ of cardinality $n$,
+  the cardinality of $\mathcal{P}(A)$ is $2^n$.
+  \begin{enumerate}
+    \item Step 1: $n=1$ $|A|=1, |\mathcal{P}(A)| = 2^1 = 2$
+    \item Step 2: Assume $k = n + 1$. Prove that $|A|=k$ and $\{a\} \in A$,
+      then $n=|A$\textbackslash$\{a\}|,|P(A$\textbackslash$\{a\})|=2^n$
+  \end{enumerate}
+
+%  \section{Exercise 0.3.15}
+%  Prove that $n^3 + 5n$ is divisible by $6$ for all
+%  $n \in \mathbb{N}$.
+%  \\~\\~\\
+%  \section{Exercise 0.3.19}
+%  Give an example of a countably infinite collection of finite sets
+%  $A_1, A_2,\ldots,$ whose union is not a finite set.
+%  \\~\\~\\
+%  \section{Exercise}
+%  In this exercise, you will prove that
+%  \begin{align*}
+%      |\{q \in \mathbb{Q}: q > 0\}| = |\mathbb{N}|\text{.}
+%  \end{align*}
+%  In what follows, we will use the followig theorem without proof: \\
+%  
+%  \textbf{Theorem.} \textit{Let} $q \in \mathbb{Q}$ with $q > 0$. \textit{Then} \\
+%  1) \textit{if} $q \in \mathbb{N}$ and $q \ne 1$, \textit{then there exists unique}
+%  \textit{prime numbers } $p_1 < p_2 < \cdots < p_N$ \textit{and unique exponents}
+%  $r_1,\ldots,r_N \in \mathbb{N}$ \textit{such that}
+%  \begin{equation}
+%      q = p^{r_1}_1 p^{r_2}_2 \cdots p^{r_N}_N \text{,}
+%  \end{equation}
+%  
+%  2) \textit{if} $q \notin \mathbb{N}$, \textit{then there exist unique}
+%  \textit{prime numbers} $p_1 < p_2 < \cdots < p_N$, $q_1 < q_2 < \cdots < q_M$ 
+%  \textit{with} $p_i \ne q_j$ \textit{for all} $i \in \{1,\ldots,N\}$,
+%  $j \in \{1,\ldots,M\}$, \textit{and unique exponents}
+%  $r_1,\ldots,r_N,s_1,\ldots s_M \in \mathbb{N}$ \textit{such that}
+%  \begin{equation}
+%      q = \frac{p^{r_1}_1 p^{r_2}_2 \cdots p^{r_N}_N}
+%               {q^{s_1}_1 q^{s_2}_2 \cdots q^{s_M}_M}\cdots
+%  \end{equation}
+%  
+%  Define $f : \{q \in \mathbb{Q} : q > 0\} \to \mathbb{N}$ as follows:
+%  $f(1) = 1$, if $q \in \mathbb{N}$\textbackslash$\{1\}$ is given by (1), \\
+%  then
+%  \begin{align*}
+%      f(q) = p^{2_{r_1}}_1 \cdots p^{2_{r_N}}_N \text{,}
+%  \end{align*}
+%  and if $q \in \mathbb{Q}$\textbackslash$\mathbb{N}$ is given by (2), then
+%  \begin{align*}
+%      f(q) = p^{2_{r_1}}_1 \cdots p^{2_{r_N}}_N
+%             q^{2_{s_1}-1}_1 \cdots q^{2_{s_M}-1}_M \text{.}
+%  \end{align*}
+%  
+%  (a) Compute $f(4/15)$. Find $q$ such that $f(q) = 108$. \\
+%  (b) Use the \textbf{Theorem} to prove that $f$ is a bijection.

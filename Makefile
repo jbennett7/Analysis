@@ -1,12 +1,13 @@
 
-render:
-	[ ! -d build ] && mkdir build
+build:
+	mkdir $@
+
+render: build
 	pdflatex Main.tex && \
 		mv Main.pdf build/Analysis.pdf && \
-		rm -f *.aux *.log
+	  $(CLEAN)
 
 clean:
-	find . -type f \( -name "*.aux" -o -name "*.log" \) -exec rm {} \;
+	$(CLEAN)
 
-clobber: clean
-	rm -rf build
+CLEAN = find . -type f \( -name "*.aux" -o -name "*.log" \) -exec rm {} \;
